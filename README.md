@@ -15,6 +15,23 @@ support). It has been tested on
 * Microsoft Windows 7, 8.1 and 10
 
 MacOS should work too, but has not been tested by me.
+## Installation
+No installation needed, just make sure Java (8 or newer) is available.
+## Running
+Double-click the jar file in a file manager, or use the commandline:
+`java -jar MatriarchSwitch.jar`
+## Usage
+1. Select the proper MIDI interface (should be found automatically if Matriarch is connected via USB).
+2. Press Button "Retrieve Parameters" to load the current settings from Matriarch
+3. Change settings as you like
+4. Press "Store Parameters". The program will remind you which parameters you changed, and ask for confirmation before
+sending the new settings to Matriarch.
+
+To save settings to a SysEx file that can later be transmitted to Matriarch by any MIDI sender, use File->Export to Sysex file.
+You can also import sysex files (that contain ONLY parameter settings), view and edit the changes and re-export the settings.
+
+To see which parameters are non-default on the Matriarch, use: "Retrieve Parameters", Tools->Reset all parameters to default,
+"Retrieve Parameters" again. The popup will tell you which parameters are changed.
 ## Development
 If you want to compile the code yourself, you can use maven, Eclipse or plain old javac.
 Maven (standalone or within Eclipse) is recommended as it automatically pulls in dependencies and creates full packages.
