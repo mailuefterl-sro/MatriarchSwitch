@@ -1,0 +1,820 @@
+{ "vendor": "Moog",
+  "device": "Matriarch",
+  "type": "GlobalParameters",
+  "version": "V1.2.0.2",
+  "groups": [
+      { "name": "Keyboard / Glide" },
+      { "name": "MIDI" },
+      { "name": "Arp/Seq" },
+      { "name": "Local Control" },
+      { "name": "Paraphony" },
+      { "name": "Ranges" },
+      { "name": "CV Ranges" },
+      { "name": "Panel settings" },
+      { "name": "Something else" },
+      { "name": "Danger Zone" }
+  ],
+  "parameters": [
+    {
+      "group": "Danger Zone",
+      "number": 0,
+      "midinumber": 0,
+      "name": "Unit ID",
+      "description": "0-15 (Default: 0)\nBe careful with this setting as it influences the communication with MatriarchSwitch.",
+      "range": { "minimum": 0, "maximum": 15, "default": 0 }
+    }, {
+      "group": "MIDI",
+      "number": 1,
+      "midinumber": 1,
+      "name": "4.6 Tuning Scale",
+      "description": "Matriarch is fully compliant with the MIDI Tuning Standard, so you can import, save, and use tuning scales and intonation systems from around the world. Tuning scales can be accessed via MIDI messages, or by using this Global Setting to select a Tuning scale from the keyboards. The last Tuning scale selected will is remembered when the power is turned off and on again. You can select any tuning table from 0 to 31. Tuning table 0 is permanently set to 12-Tone Equal Temperament.\nThe Default is 0 (12-TET).",
+      "range": { "minimum": 0, "maximum": 31, "default": 0 }
+    }, {
+      "group": "Something else",
+      "number": 2,
+      "midinumber": 2,
+      "name": "Knob Mode",
+      "description": "I have no idea what this really does.\n0 = Snap, 1 = Pass-Thru, 2 = Relative (Default: 2 / Relative)\nThe real Default is Snap.",
+      "choices": [
+        { "name": "Snap", "number": 0, "default": "true" },
+        { "name": "Pass-Thru", "number": 1 },
+        { "name": "Relative", "number": 2 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 3,
+      "midinumber": 3,
+      "name": "0.1 Note Priority",
+      "description": "Note Priority selects which note will take priority when playing the Matriarch keyboard in monophonic mode. The choices are the highest note played, the lowest note played, or the most recently played note.\nDefault: Last Note",
+      "choices": [
+        { "name": "Low", "number": 0 },
+        { "name": "High", "number": 1 },
+        { "name": "Last", "number": 2, "default": "true" }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 4,
+      "midinumber": 4,
+      "name": "1.10 Transmit Program Change",
+      "description": "Matriarch can be set to send a MIDI Program Change command (Program Numbers 1 through 12) when the OCT / BANK switch and SEQUENCE knob on the front panel are used to select and load a previously saved sequence from memory. Turning this Global Setting OFF will prevent Program Change commands from being sent when a sequence is selected. The Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 5,
+      "midinumber": 5,
+      "name": "1.9 Receive Program Change",
+      "description": "MIDI Program Change commands (Program Numbers 1 through 12) can be used to load a previously saved Matriarch sequence, and make it the active sequence. Turning this Global Setting OFF will prevent errant Program Change commands from inadvertently activating a saved sequence.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Danger Zone",
+      "number": 6,
+      "midinumber": 6,
+      "name": "MIDI Input Ports",
+      "description": "0 = none, 1 = DIN only, 2 = USB only, 3 = Both (Default: 3 / Both DIN and USB)\nBe careful with this setting as it can inhibit communication with MatriarchSwitch.",
+      "choices": [
+        { "name": "None", "number": 0 },
+        { "name": "DIN only", "number": 1 },
+        { "name": "USB only", "number": 2 },
+        { "name": "Both DIN + USB", "number": 3, "default": "true" }
+      ]
+    }, {
+      "group": "Danger Zone",
+      "number": 7,
+      "midinumber": 7,
+      "name": "MIDI Output Ports",
+      "description": "0 = none, 1 = DIN only, 2 = USB only, 3 = Both (Default: 3 / Both DIN and USB)\nBe careful with this setting as it can inhibit communication with MatriarchSwitch.",
+      "choices": [
+        { "name": "None", "number": 0 },
+        { "name": "DIN only", "number": 1 },
+        { "name": "USB only", "number": 2 },
+        { "name": "Both DIN + USB", "number": 3, "default": "true" }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 8,
+      "midinumber": 8,
+      "name": "1.3 MIDI Echo USB In",
+      "description": "MIDI Echo USB allows MIDI data received at the USB MIDI input to be re-transmitted via the USB MIDI output, the DIN MIDI output, or both.\nThe Default is No echo.",
+      "choices": [
+        { "name": "No echo", "number": 0, "default": "true" },
+        { "name": "Echo to DIN OUT", "number": 1 },
+        { "name": "Echo to USB OUT", "number": 2 },
+        { "name": "Echo to DIN + USB", "number": 3 }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 9,
+      "midinumber": 9,
+      "name": "1.4 MIDI Echo DIN In",
+      "description": "MIDI Echo DIN allows MIDI data received at the DIN MIDI input to be re-transmitted via the DIN MIDI output, the USB MIDI output, or both.\nThe Default is No echo.",
+      "choices": [
+        { "name": "No echo", "number": 0, "default": "true" },
+        { "name": "Echo to DIN OUT", "number": 1 },
+        { "name": "Echo to USB OUT", "number": 2 },
+        { "name": "Echo to DIN + USB", "number": 3 }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 10,
+      "midinumber": 10,
+      "name": "1.1 MIDI Channel IN",
+      "description": "Matriarch can send and receive data on any MIDI Channel, from 1 to 16.\nThe Default is Channel 1.",
+      "choices": [
+        { "name": "Channel 1", "number": 0, "default": "true" },
+        { "name": "Channel 2", "number": 1 },
+        { "name": "Channel 3", "number": 2 },
+        { "name": "Channel 4", "number": 3 },
+        { "name": "Channel 5", "number": 4 },
+        { "name": "Channel 6", "number": 5 },
+        { "name": "Channel 7", "number": 6 },
+        { "name": "Channel 8", "number": 7 },
+        { "name": "Channel 9", "number": 8 },
+        { "name": "Channel 10", "number": 9 },
+        { "name": "Channel 11", "number": 10 },
+        { "name": "Channel 12", "number": 11 },
+        { "name": "Channel 13", "number": 12 },
+        { "name": "Channel 14", "number": 13 },
+        { "name": "Channel 15", "number": 14 },
+        { "name": "Channel 16", "number": 15 }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 11,
+      "midinumber": 11,
+      "name": "1.2 MIDI Channel OUT",
+      "description": "Matriarch can send and receive data on any MIDI Channel, from 1 to 16.\nThe Default is Channel 1.",
+      "choices": [
+        { "name": "Channel 1", "number": 0, "default": "true" },
+        { "name": "Channel 2", "number": 1 },
+        { "name": "Channel 3", "number": 2 },
+        { "name": "Channel 4", "number": 3 },
+        { "name": "Channel 5", "number": 4 },
+        { "name": "Channel 6", "number": 5 },
+        { "name": "Channel 7", "number": 6 },
+        { "name": "Channel 8", "number": 7 },
+        { "name": "Channel 9", "number": 8 },
+        { "name": "Channel 10", "number": 9 },
+        { "name": "Channel 11", "number": 10 },
+        { "name": "Channel 12", "number": 11 },
+        { "name": "Channel 13", "number": 12 },
+        { "name": "Channel 14", "number": 13 },
+        { "name": "Channel 15", "number": 14 },
+        { "name": "Channel 16", "number": 15 }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 12,
+      "midinumber": 12,
+      "name": "4.10 MIDI Out Filter - Keys",
+      "description": "This setting controls whether or not MIDI Note messages are output in response to playing on the Matriarch keyboard. ON is the setting that allows MIDI notes to be sent.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 13,
+      "midinumber": 13,
+      "name": "4.9 MIDI Out Filter - Wheels",
+      "description": "This setting controls whether or not MIDI CC messages are output in response to movement of the Pitch Wheel or Mod Wheel. ON is the setting that allows messages to be sent.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 14,
+      "midinumber": 14,
+      "name": "4.8 MIDI Out FIlter - Panel",
+      "description": "This setting controls whether or not MIDI CC messages are output in response to changes made to the front panel controls. ON is the setting that allows messages to be sent. When MIDI Out Filter - Panel Knobs is OFF, then no MIDI CC messages are output from Grandmother in response to panel control changes.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "MIDI",
+      "number": 15,
+      "midinumber": 15,
+      "name": "Output 14-bit MIDI CCs",
+      "description": "Matriarch can send MIDI CC messages in response to changes on knobs and wheels. These CC messages normally contain a single 7-bit value. If this setting is set to Extended, Matriarch always sends 2 CC messages, achieving a higher 14-bit resolution. Set this only if the other MIDI gear on the chain can cope with it.\nThe Default is Standard 7-bit.",
+      "choices": [
+        { "name": "Standard 7-bit", "number": 0, "default": "true" },
+        { "name": "Extended 14-bit", "number": 1 }
+      ]
+    }, {
+      "group": "Local Control",
+      "number": 16,
+      "midinumber": 16,
+      "name": "1.7+ Local Control: Keys",
+      "description": "The Matriarch Keyboard can be disconnected from the internal synth engine, while still outputting MIDI and CV/Gate data. The Default is Connected.",
+      "choices": [
+        { "name": "Disconnected", "number": 0 },
+        { "name": "Connected", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Local Control",
+      "number": 17,
+      "midinumber": 17,
+      "name": "1.7+ Local Control: Wheels",
+      "description": "The Matriarch Pitch, and Modulation wheels can be disconnected from the internal synth engine, while still outputting MIDI and CV. The Default is Connected.",
+      "choices": [
+        { "name": "Disconnected", "number": 0 },
+        { "name": "Connected", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Local Control",
+      "number": 18,
+      "midinumber": 18,
+      "name": "Local Control: Panel",
+      "description": "Some panel knobs (Arp/Seq Rate, Mod Rate, Osc 2/3/4 Freq, Delay Time) can be disconnected from the internal synth engine, wile still outputting MIDI and CV.\nThe Default is Disconnected.\nDoes not seem to have any effect in firmware 1.2.1",
+      "choices": [
+        { "name": "Disconnected", "number": 0, "default": "true" },
+        { "name": "Connected", "number": 1 }
+      ]
+    }, {
+      "group": "Local Control",
+      "number": 19,
+      "midinumber": 19,
+      "name": "1.8 Local Control: Arp/Seq",
+      "description": "The Matriarch Sequencer and Arpeggiator can be disconnected from the internal synth engine, while still outputting MIDI and CV/Gate data.\nThe Default is Connected.",
+      "choices": [
+        { "name": "Disconnected", "number": 0 },
+        { "name": "Connected", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 20,
+      "midinumber": 20,
+      "name": "2.4 Sequencer Transpose Mode",
+      "description": "The playback of a sequence can be transposed in real time via two methods. The first simply transposes the sequence so that the first note of the pattern is the note being played on the keyboard. The second method assumes Middle C is correct key, and will playback the sequence as it was recorded when Middle C is played. So to transpose the sequence up a Fourth, hold down the F key above Middle C. To transpose the sequence down a Fifth, hold down the G below Middle C.\nThe Default is Relative to first Note.",
+      "choices": [
+        { "name": "Relative to first Note", "number": 0, "default": "true" },
+        { "name": "Relative to middle C", "number": 1 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 21,
+      "midinumber": 21,
+      "name": "2.7 Arp/Seq Keyed Timing Reset",
+      "description": "The Arp / Seq Keyed Timing Reset changes how the Arpeggiator, the Matriarch master clock, and notes played on the keyboard will interact. When OFF, the Arpeggiator will remain locked to the Master Clock so that notes played ahead of the beat (prior to the next step) will wait for the next beat, or clock step, to sound. When ON, notes played on the keyboard will sound immediately, and the master clock will reset, or sync, to the timing of when the key was pressed.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 22,
+      "midinumber": 22,
+      "name": "2.8 Arp FW/BW Repeats",
+      "description": "When the DIRECTION switch in the Arp / Seq module is set to FW / BW, this setting will determine whether the first and last notes of an arpeggio pattern or sequence are repeated as the direction changes. This can be handy both melodically and rhythmically. If Repeat is OFF, the three-note sequence [C-E-G] would play as [C-E-G-E-C-E-G-E...]; if Repeat is ON, the same [C-E-G] sequence would now play as [C-E-G-G-E-C-C-E-G-G-E-C...].\nThe Default is Repeat.",
+      "choices": [
+        { "name": "Don't repeat end notes", "number": 0 },
+        { "name": "Repeat end notes", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 23,
+      "midinumber": 23,
+      "name": "2.10 Arp/Seq Swing",
+      "description": "Adding Swing to the playback of the Arpeggiator or Sequencer causes the offbeat to arrive Early or Late, in varying amounts, to change the rhythmic feel. Use any of the white keys to set the swing amount, in 2% increments. The range of available values is from 0 to 16383 = 0 to 100%.\nThe Default is 8192 (50% / no swing)",
+      "range": { "minimum": 0, "maximum": 16383, "default": 8192 }
+    }, {
+      "group": "Arp/Seq",
+      "number": 24,
+      "midinumber": 24,
+      "name": "2.5 Sequence Keyboard Control",
+      "description": "The keyboard and the Sequencer can operate together or independently. When Sequencer Keyboard Control is ON, pressing a key on the keyboard, or playing a MIDI note will start the sequence and set any transposition of the sequence. When Sequencer Keyboard Control is OFF, the Sequencer operates independently of the keyboard. The active sequence will play immediately at the original recorded pitch when the PLAY button is pressed (lit), while notes played on the Matriarch keyboard (or MIDI notes) can then play along with the Sequencer.\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 25,
+      "midinumber": 25,
+      "name": "2.9 Delay Sequence Change",
+      "description": "The Global Setting for Delay Sequence Change determines how the Sequencer playback will transition from one sequence to another. When the Sequencer is running, changing from one sequence to another will take place instantly (Delay Sequence Change = OFF), or the active sequence will be allowed to finish before the new sequence begins (Delay Sequence Change = ON).\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 26,
+      "midinumber": 26,
+      "name": "2.6 Sequence Latch Restart",
+      "description": "Sequence Keyed Restart determines the behavior of the Sequencer when Sequence Keyboard Control is ON. When restarting a sequence by playing a key on the keyboard (or a received MIDI note), the sequence can restart from the first note of the sequence (ON), or the sequence can resume playback from where it left off (Off).\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 27,
+      "midinumber": 27,
+      "name": "2.1 Arp/Seq Clock Input Mode",
+      "description": "The CLOCK IN jack on the Matriarch rear panel can work in two different ways: As an analog clock input which sets the tempo of the Sequencer’s internal clock, or as a step-advance trigger input, which advances the Arpeggiator or Sequencer by one step each time a rising-edge trigger is detected at the CLOCK IN jack.\nThe Default is Clock.",
+      "choices": [
+        { "name": "Clock", "number": 0, "default": "true" },
+        { "name": "Step-Advance Trigger", "number": 1 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 28,
+      "midinumber": 28,
+      "name": "2.2 Arp/Seq Clock Output",
+      "description": "The Arp / Seq CLOCK OUT jack can be set to constantly send a clock pulse signal, or to send clock pulse signals only when the PLAY button is lit, and the playback of a sequence or Arpeggiator pattern is active.\nThe Default is Only when playing.",
+      "choices": [
+        { "name": "Always", "number": 0 },
+        { "name": "Only when playing", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 29,
+      "midinumber": 29,
+      "name": "2.3 ArpSeq MIDI Output",
+      "description": "Matriarch allows the note data generated by an arpeggio or sequence to be output via MIDI, or not.\nThe Default is On",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 30,
+      "midinumber": 30,
+      "name": "1.6+ Send MIDI Clock",
+      "description": "The Matriarch Sequencer and Arpeggiator can be set to output MIDI Clock. Depending on your setup, you may wish for Matriarch to send it Always, Only when Playing, or not at all.\nThe default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "Only when playing", "number": 1 },
+        { "name": "Always", "number": 1 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 31,
+      "midinumber": 31,
+      "name": "1.6+ Send MIDI Start/Stop",
+      "description": "The Matriarch Sequencer and Arpeggiator can be set to output MIDI Start and Stop commands. Depending on your setup, you may wish for Matriarch to not send some of these commands.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 32,
+      "midinumber": 32,
+      "name": "1.5+ Follow MIDI Clock",
+      "description": "The Matriarch Sequencer and Arpeggiator can be set to follow MIDI Clock (On), or ignore it (Off).\nThe Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 33,
+      "midinumber": 33,
+      "name": "1.5+ Follow MIDI Start/Stop",
+      "description": "The Matriarch Sequencer and Arpeggiator can respond to Start and Stop commands received via MIDI (On), or ignore them (Off). The Default is On.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 34,
+      "midinumber": 34,
+      "name": "Follow Song Position Pointer",
+      "description": "I have no idea what this really does.\n0 = Off, 1 = On (Default: 1 / On)",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 35,
+      "midinumber": 35,
+      "name": "3.1 Clock Input PPQN Index",
+      "description": "In order for the Matriarch Sequencer and Arpeggiator to sync correctly to an External Clock, this Global Setting allows you to specify how many pulses are received per quarter note (PPQN).\nThe Default is 4 PPQN / sixteenth note clock.",
+      "choices": [
+        { "name": "1 PPQN", "number": 0 },
+        { "name": "2 PPQN", "number": 1 },
+        { "name": "3 PPQN", "number": 2 },
+        { "name": "4 PPQN", "number": 3, "default": "true" },
+        { "name": "5 PPQN", "number": 4 },
+        { "name": "6 PPQN", "number": 5 },
+        { "name": "7 PPQN", "number": 6 },
+        { "name": "8 PPQN", "number": 7 },
+        { "name": "9 PPQN", "number": 8 },
+        { "name": "10 PPQN", "number": 9 },
+        { "name": "11 PPQN", "number": 10 },
+        { "name": "12 PPQN", "number": 11 },
+        { "name": "13 PPQN", "number": 12 },
+        { "name": "14 PPQN", "number": 13 },
+        { "name": "15 PPQN", "number": 14 },
+        { "name": "16 PPQN", "number": 15 }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 36,
+      "midinumber": 36,
+      "name": "3.2 Clock Output PPQN Index",
+      "description": "In order for an external device to sync correctly to the Matriarch Sequencer and Arpeggiator, this Global Setting allows you to specify how many pulses are sent per quarter note (PPQN).\nThe Default is 4 PPQN / sixteenth note clock.",
+      "choices": [
+        { "name": "1 PPQN", "number": 0 },
+        { "name": "2 PPQN", "number": 1 },
+        { "name": "3 PPQN", "number": 2 },
+        { "name": "4 PPQN", "number": 3, "default": "true" },
+        { "name": "5 PPQN", "number": 4 },
+        { "name": "6 PPQN", "number": 5 },
+        { "name": "7 PPQN", "number": 6 },
+        { "name": "8 PPQN", "number": 7 },
+        { "name": "9 PPQN", "number": 8 },
+        { "name": "10 PPQN", "number": 9 },
+        { "name": "11 PPQN", "number": 10 },
+        { "name": "12 PPQN", "number": 11 },
+        { "name": "13 PPQN", "number": 12 },
+        { "name": "14 PPQN", "number": 13 },
+        { "name": "15 PPQN", "number": 14 },
+        { "name": "16 PPQN", "number": 15 }
+      ]
+    }, {
+      "group": "Ranges",
+      "number": 37,
+      "midinumber": 37,
+      "name": "0.4 Pitch Bend Range (Semitones)",
+      "description": "The effective pitch bend range of the Matriarch PITCH wheel can be set in semitone units, from 0 to 12. Twelve semitones is equal to one octave.\nThe Default is 2 semitones.",
+      "choices": [
+        { "name": "0", "number": 0 },
+        { "name": "1", "number": 1 },
+        { "name": "2", "number": 2, "default": "true" },
+        { "name": "3", "number": 3 },
+        { "name": "4", "number": 4 },
+        { "name": "5", "number": 5 },
+        { "name": "6", "number": 6 },
+        { "name": "7", "number": 7 },
+        { "name": "8", "number": 8 },
+        { "name": "9", "number": 9 },
+        { "name": "10", "number": 10 },
+        { "name": "11", "number": 11 },
+        { "name": "12", "number": 12 }
+      ]
+    }, {
+      "group": "Keyboard / Glide",
+      "number": 38,
+      "midinumber": 38,
+      "name": "Keyboard Octave Transpose",
+      "description": "This setting is normally changed by pressing Hold+Play or Hold+Tab and extends the octave range of the keyboard.\nThe default is No transpose.",
+      "choices": [
+        { "name": "-2 Octaves", "number": 0 },
+        { "name": "-1 Octave", "number": 1 },
+        { "name": "No transpose", "number": 2, "default": "true" },
+        { "name": "+1 Octave", "number": 3 },
+        { "name": "+2 Octaves", "number": 4 }
+      ]
+    }, {
+      "group": "Keyboard / Glide",
+      "number": 39,
+      "midinumber": 39,
+      "name": "4.1 Delayed KB Octave Transpose",
+      "description": "The keyboard Octave Up/Down functions (SHIFT + PLAY buttons for Octave Down, and SHIFT + TAP buttons for Octave Up) can be set to take effect immediately, transposing any notes that are currently being held on the keyboard, or their effect can be delayed, meaning that any currently held notes will not be transposed, but new notes played after using the Octave Up/Down function will sound at the new octave.\nThe Default is On.\nDoes not seem to have any effect in firmware V1.2.1",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Keyboard / Glide",
+      "number": 40,
+      "midinumber": 40,
+      "name": "0.2 Glide Type",
+      "description": "Glide Type determines the behavior of the Glide function.\nLCR (Linear Constant Rate): The Glide time is dependent on the interval between notes; the larger the interval, the longer the delay time. This is the most commonly used type of Glide.\nLCT (Linear Constant Time): The Glide time remains the same, regardless of the interval between notes.\nEXP (Exponential): The Glide rate follows an exponential curve that begins with a fast rate, and slows as it nears the target note.\nThe default setting is LCR.",
+      "choices": [
+        { "name": "LCR Linear Constant Rate", "number": 0, "default": "true" },
+        { "name": "LCT Linear Constant Time", "number": 1 },
+        { "name": "Exponential", "number": 2 }
+      ]
+    }, {
+      "group": "Keyboard / Glide",
+      "number": 41,
+      "midinumber": 41,
+      "name": "0.3 Gated Glide",
+      "description": "Gated Glide causes the gradual gliding between notes to be started and stopped by the keyboard gate. When gated glide is On, the pitch CV only glides while a key is held. When Gated Glide is Off, the pitch CV will continue gliding to the target pitch at the current Glide rate, regardless of whether or not a key is held on Matriarch. The different behaviors are more distinct at longer glide times.\nThe Default is ON.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "On", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Keyboard / Glide",
+      "number": 42,
+      "midinumber": 42,
+      "name": "Legato Glide",
+      "description": "Legato Glide only produces the Glide effect when a new note is played while the previous note is still held down on the keyboard. To turn Legato Glide On, continue to press the [SHIFT] button while turning the GLIDE knob to the right. To turn Legato Glide Off, continue to press the [SHIFT] button while turning the GLIDE knob to the left.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Ranges",
+      "number": 43,
+      "midinumber": 43,
+      "name": "0.6+ Osc 2 Freq Knob Range",
+      "description": "The range of the Oscillator 2 FREQUENCY knob can be limited or expanded to a specific number of semitones, from 0 to 24.\nThe Default is 7 semitones (a musical Perfect Fifth).",
+      "range": { "minimum": 0, "maximum": 24, "default": 7 }
+    }, {
+      "group": "Ranges",
+      "number": 44,
+      "midinumber": 44,
+      "name": "0.6+ Osc 3 Freq Knob Range",
+      "description": "The range of the Oscillator 3 FREQUENCY knob can be limited or expanded to a specific number of semitones, from 0 to 24.\nThe Default is 7 semitones (a musical Perfect Fifth).",
+      "range": { "minimum": 0, "maximum": 24, "default": 7 }
+    }, {
+      "group": "Ranges",
+      "number": 45,
+      "midinumber": 45,
+      "name": "0.6+ Osc 4 Freq Knob Range",
+      "description": "The range of the Oscillator 4 FREQUENCY knob can be limited or expanded to a specific number of semitones, from 0 to 24.\nThe Default is 7 semitones (a musical Perfect Fifth).",
+      "range": { "minimum": 0, "maximum": 24, "default": 7 }
+    }, {
+      "group": "Panel settings",
+      "number": 46,
+      "midinumber": 46,
+      "name": "Hard Sync Enable",
+      "description": "Reflects the status of the Oscillator \"Sync Enable\" panel button.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 47,
+      "midinumber": 47,
+      "name": "Osc 2 Hard Sync",
+      "description": "Reflects the status of the \"Osc 2 Sync\" panel button.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 48,
+      "midinumber": 48,
+      "name": "Osc 3 Hard Sync",
+      "description": "Reflects the status of the \"Osc 3 Sync\" panel button.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 49,
+      "midinumber": 49,
+      "name": "Osc 4 Hard Sync",
+      "description": "Reflects the status of the \"Osc 4 Sync\" panel button.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 50,
+      "midinumber": 50,
+      "name": "Delay Ping Pong",
+      "description": "Reflects the status of the Stereo Delay \"Ping Pong\" panel button.\nThe Default is Off.\nWith firmware V1.2.1, takes effect only after switching Matriarch off-on.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 51,
+      "midinumber": 51,
+      "name": "Delay Sync",
+      "description": "Reflects the status of the Stereo Delay \"Sync\" panel button.\nThe Default is Off.\nWith firmware V1.2.1, enabling sync takes effect immediately but does not switch off the button LED, disabling sync leaves the button LED lit and stays at the previous (synced) time/frequency.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Something else",
+      "number": 52,
+      "midinumber": 52,
+      "name": "0.9 Delay Filter Brightness",
+      "description": "The output of the Stereo Delay can be set to either a Bright tone or a Dark tone.\nThe Default is Bright.",
+      "choices": [
+        { "name": "Dark", "number": 0 },
+        { "name": "Bright", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Something else",
+      "number": 53,
+      "midinumber": 53,
+      "name": "0.10 Delay CV Sync-Bend",
+      "description": "The Delay Sync CV Bend parameter sets the behavior of the TIME CV inputs when the Delay is synchronized to internal or external clock. With Delay CV Sync Bend On, the TIME CV inputs “bend” the Delay Time relative to its currently synchronized tempo, up to plus-or-minus 33%. This can be useful for adding choral motion or warble to synchronized Delay effects. With Delay CV Sync Bend Off, the TIME CV inputs work identically to the front-panel TIME and SPACING knobs, selecting tempo-synced clock divisions of the of the currently synchronized tempo.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Something else",
+      "number": 54,
+      "midinumber": 54,
+      "name": "Tap-Tempo Clock Division Persistence",
+      "description": "I have no idea what this really does.\n0 = Off, 1 = On (Default: 0 / Off)",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 55,
+      "midinumber": 55,
+      "name": "Paraphony Mode",
+      "description": "Reflects the status of the \"Paraphony Voice Mode\" panel switch.\nThe Default is Off.\nChanging this parameter has no effect.",
+      "choices": [
+        { "name": "Monophony", "number": 0, "default": "true" },
+        { "name": "2 Voices Paraphony", "number": 1 },
+        { "name": "4 Voices Paraphony", "number": 2 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 56,
+      "midinumber": 56,
+      "name": "4.3 Paraphonic Unison",
+      "description": "When Paraphonic Unison is set to On, all four Matriarch oscillators will always sound, even when the PARAPHONY switch is set to VOICE MODE 2 or VOICE MODE 4, regardless of how many notes are held. When just one key is played, all four of the Matriarch oscillators will play from that key. When two keys are played, each key will play two of the Matriarch oscillators (1+2; 3+4). With the switch set to VOICE MODE 4, adding a third note assigns a new pitch to Oscillator 3, and adding a fourth note assigns a new pitch to Oscillator 4.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Panel settings",
+      "number": 57,
+      "midinumber": 57,
+      "name": "Multi Trig",
+      "description": "Reflects the status of the \"Multi Trig\" panel button.\nThe Default is Off.\nIn firmware V1.2.1, enabling it via Midi does not have any effect, but disabling it works but leaves the button LED lit.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Range",
+      "number": 58,
+      "midinumber": 58,
+      "name": "0.5 Pitch Variance",
+      "description": "Pitch Variance adds an adjustable amount of controlled randomness to the tuning of each note. The actual amount of detuning is applied randomly to each key press, from zero (no detuning), up to ± 40 cents of detuning per note. The maximum amount of detuning is set by this Pitch Variance parameter, the value is 0-400 (0 to +/- 40 cents in 0.1-cent increments).\nDefault: 0 / Off",
+      "range": { "minimum": 0, "maximum": 400, "default": 0 }
+    }, {
+      "group": "CV Ranges",
+      "number": 59,
+      "midinumber": 59,
+      "name": "3.3 KB CV OUT Range",
+      "description": "The Matriarch keyboard generates a specific control voltage for every note played. The voltage range of this signal appears at the KB CV OUT jack on the Matriarch rear panel, and can be set to (-5V to +5V) or (0V to +10V) in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is -5V to +5V.",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 60,
+      "midinumber": 60,
+      "name": "3.4 Arp/Seq CV OUT Range",
+      "description": "0 = -5V to +5V, 1 = 0V to 10V (Default: 0 / -5 to +5)",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 61,
+      "midinumber": 61,
+      "name": "3.5 KB VEL OUT Range",
+      "description": "The Matriarch keyboard generates a specific control voltage based on the dynamics of every note played. The voltage range of this signal appears at the KB VEL OUT jack on the rear panel, and can be set to (0V to +5V) or (0V to +10V) in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is -5V to +5V.",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 62,
+      "midinumber": 62,
+      "name": "3.6 Arp/Seq VEL OUT Range",
+      "description": "The Matriarch Arpeggiator and Sequencer generate a specific control voltage based on the dynamics of every note played. The voltage range of this signal appears at the VEL OUT jack in the ARP / SEQ module on the front panel, and can be set to (0V to +5V) or (0V to +10V) in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is -5V to +5V.",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 63,
+      "midinumber": 63,
+      "name": "3.7 KB AT OUT Range",
+      "description": "The Matriarch keyboard generates a specific control voltage based on the amount of Aftertouch being applied. The voltage range of this signal appears at the KB AT OUT jack on the rear panel, and can be set to (0V to +5V) or (0V to +10V) in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is -5V to +5V.",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 64,
+      "midinumber": 64,
+      "name": "3.8 MOD WHL OUT Range",
+      "description": "The Matriarch Modulation (MOD) Wheel generates a specific control voltage based on its current position.  The voltage range of this signal appears at the MOD WHL OUT jack on the rear panel, and can be set to (0V to +5V) or (0V to +10V) in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is -5V to +5V.",
+      "choices": [
+        { "name": "-5V to +5V", "number": 0, "default": "true" },
+        { "name": "0V to 10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 65,
+      "midinumber": 65,
+      "name": "3.9 KB GATE OUT Range",
+      "description": "The Matriarch keyboard generates a specific control voltage, or gate, whenever a key is depressed. This gate voltage appears at the KB GATE OUT jack on the rear panel, and can be set to +5V or +10V, in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is +5V.",
+      "choices": [
+        { "name": "+5V", "number": 0, "default": "true" },
+        { "name": "+10V", "number": 1 }
+      ]
+    }, {
+      "group": "CV Ranges",
+      "number": 66,
+      "midinumber": 66,
+      "name": "3.10 Arp/Seq GATE OUT Range",
+      "description": "The Matriarch Arpeggiator and Sequencer generate a specific control voltage, or gate, whenever a non-legato note is played. This gate voltage appears at the VEL OUT jack in the ARP / SEQ module on the front panel, and can be set to +5V or +10V, in order to accommodate another synthesizer or piece of electronic music gear.\nThe Default is +5V.",
+      "choices": [
+        { "name": "+5V", "number": 0, "default": "true" },
+        { "name": "+10V", "number": 1 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 67,
+      "midinumber": 67,
+      "name": "4.2 Round-Robin Mode",
+      "description": "This voice-assignment mode uses a cyclical pattern to assign each new note to a different oscillator. There are three available values: Off (C0), On with Reset (D0), and On (E0). When the value is set to Off, each new note is always assigned to lowest-numbered available oscillator. With the value set to On with Reset, the first note played is always assigned to Oscillator 1, and additional notes are assigned to the other remaining oscillators in a rotating fashion. With the value set to On, each note played is assigned to the next available oscillator.\nThe Default is First-Note Reset.",
+      "choices": [
+        { "name": "Off", "number": 0 },
+        { "name": "First-Note Reset", "number": 1, "default": "true" },
+        { "name": "On", "number": 0 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 68,
+      "midinumber": 68,
+      "name": "4.5 Restore Stolen Voices",
+      "description": "When the PARAPHONY switch is set to VOICE MODE 2 or VOICE MODE 4, as the number of keys played exceeds the current number of available voices, older notes are “stolen” and replaced by newer notes. However, when this Global Setting is set to On, the oscillator(s) can resume playing the pitch of these stolen notes – as long as their respective keys are still being held on the keyboard. This can be very beneficial in mixing mono and poly playing techniques, such as holding a three-note chord, while using the remaining voice to play a mono-style trill.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Paraphony",
+      "number": 69,
+      "midinumber": 69,
+      "name": "4.4 Update Unison on Note-Off",
+      "description": "This Global Setting is only available while the Paraphonic Unison Global Setting is set to On. When the Update Unison on Note-Off setting is on, all four oscillators are reassigned to the notes which are still playing whenever a key is released.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }, {
+      "group": "Ranges",
+      "number": 70,
+      "midinumber": 70,
+      "name": "0.7 Mod Oscillator Square Wave Polarity",
+      "description": "The square wave signal available from the Modulation section can be set to Unipolar – having only positive modulation above the zero line, or Bipolar – having equal amounts of both positive and negative modulation.\nThe Default is Bipolar.",
+      "choices": [
+        { "name": "Unipolar", "number": 0 },
+        { "name": "Bipolar", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Ranges",
+      "number": 71,
+      "midinumber": 71,
+      "name": "0.8 Noise Filter Cutoff",
+      "description": "Matriarch uses a 1-pole high-pass filter (VCF) to control the tonality and coloration of the analog Noise generator. Low-end content is removed as the filter cutoff frequency is increased.\nThe range is 0 to 16383 = dark to bright (Default: 0)",
+      "range": { "minimum": 0, "maximum": 16383, "default": 0 }
+    }, {
+      "group": "Arp/Seq",
+      "number": 72,
+      "midinumber": 72,
+      "name": "4.7 Seq Random Repeats",
+      "description": "This parameter controls whether the Sequencer playback in Random direction will allow the same note/pitch to repeat on adjacent steps, or not.\nThe Default is Allow Repeats.",
+      "choices": [
+        { "name": "No repeating notes", "number": 0 },
+        { "name": "Allow Repeats", "number": 1, "default": "true" }
+      ]
+    }, {
+      "group": "Arp/Seq",
+      "number": 73,
+      "midinumber": 73,
+      "name": "5.1 ARP/SEQ CV OUT Mirrors KB CV",
+      "description": "This setting allows the CV OUT, GATE OUT, and VEL OUT jacks in the ARP/SEQ section of the panel to reflect the KB CV OUT, KB GATE OUT, and KB VEL OUT signals any time the Arp/Sequencer is not running.\nThe Default is Off.",
+      "choices": [
+        { "name": "Off", "number": 0, "default": "true" },
+        { "name": "On", "number": 1 }
+      ]
+    }
+  ]
+}
