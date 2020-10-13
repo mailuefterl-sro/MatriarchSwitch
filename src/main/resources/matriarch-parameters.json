@@ -756,7 +756,7 @@
       "choices": [
         { "name": "Off", "number": 0 },
         { "name": "First-Note Reset", "number": 1, "default": "true" },
-        { "name": "On", "number": 0 }
+        { "name": "On", "number": 2 }
       ]
     }, {
       "group": "Paraphony",
