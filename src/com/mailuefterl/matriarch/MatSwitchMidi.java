@@ -49,6 +49,9 @@ import javax.sound.midi.SysexMessage;
 import com.mailuefterl.matriarch.util.ILogger;
 import com.mailuefterl.matriarch.util.LogManager;
 
+import uk.co.xfactorylibrarians.coremidi4j.CoreMidiDeviceProvider;
+import uk.co.xfactorylibrarians.coremidi4j.CoreMidiException;
+
 /**
  * Midi interface for MatriarchSwitcher, generates and interprets Sysex Messages
  * for parameter manipulation.
@@ -75,26 +78,39 @@ public class MatSwitchMidi {
   /** constructor */
   public MatSwitchMidi(final MatSwitchController ctl) {
     this.ctl = ctl;
+    try {
+      CoreMidiDeviceProvider.getMidiDeviceInfo(); // workaround concurrency issue in MidiSystem/CoreMidi4J
+      CoreMidiDeviceProvider.addNotificationListener(() -> ctl.midiChanged());
+    }
+    catch (final CoreMidiException e) {
+      log.error("Warning: Cannot add Midi notification listener: ", e);
+    }
   }
   
   /** retrieve the list of active interfaces */
   public List<MidiInterface> fetchInterfaces(final boolean doTransmitters, final boolean doReceivers) {
     List<MidiInterface> interfaces = new ArrayList<MidiInterface>();
-    for (MidiDevice.Info minfo: MidiSystem.getMidiDeviceInfo()) {
+    for (MidiDevice.Info minfo: CoreMidiDeviceProvider.getMidiDeviceInfo()) {
       try {
         MidiDevice mdev = MidiSystem.getMidiDevice(minfo);
         if ((mdev instanceof Synthesizer) || (mdev instanceof Sequencer)) {
           continue;  // ignore software synth & seq
         }
         if (doTransmitters && (mdev.getMaxTransmitters() != 0)) {
-          log.debug("found MIDI InPort ", minfo.getName());
-          interfaces.add(new MidiInterface(mdev));
+          final MidiInterface mintf = new MidiInterface(mdev);
+          log.debug("found MIDI InPort ", mintf);
+          interfaces.add(mintf);
         } else if (doReceivers && (mdev.getMaxReceivers() != 0)) {
-          log.debug("found MIDI OutPort ", minfo.getName());
-          interfaces.add(new MidiInterface(mdev));
+          final MidiInterface mintf = new MidiInterface(mdev);
+          log.debug("found MIDI OutPort ", mintf);
+          interfaces.add(mintf);
         }
       }
       catch (final MidiUnavailableException e) {
+        log.error("Warning: unable to fetch Midi interface ", minfo.getName(), ": ", e);
+      }
+      catch (final IllegalArgumentException e) {
+        // "Requested device not installed" might occur due to MidiSystem concurrency issue
         log.error("Warning: unable to fetch Midi interface ", minfo.getName(), ": ", e);
       }
     }

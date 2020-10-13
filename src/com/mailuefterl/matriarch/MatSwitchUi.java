@@ -420,6 +420,11 @@ public class MatSwitchUi {
     fetchMidiInterfaces();
   }
   
+  /** Controller told us that list of Midi interfaces changed. Re-fetch interfaces. */
+  public void midiChanged() {
+    fetchMidiInterfaces();
+  }
+
   /** find available Matriarch units and populate combobox */
   private void fetchMidiUnits() {
     List<MatriarchUnit> availableDevices = ctl.fetchMidiUnits();

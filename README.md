@@ -13,8 +13,8 @@ MatriarchSwitch is written in Java and should run on everything that has Java >=
 support). It has been tested on
 * Ubuntu Linux 20.04
 * Microsoft Windows 7, 8.1 and 10
+* macOS Catalina
 
-MacOS should work too, but has not been tested by me.
 ## Installation
 No installation needed, just make sure Java (8 or newer) is available.
 ## Running
@@ -38,3 +38,6 @@ Maven (standalone or within Eclipse) is recommended as it automatically pulls in
 ## License
 This code is licensed under MIT style license, i.e. you can use it in your own openSource or commercial project 
 without restrictions, just leave the copyright and license notes intact.
+
+Note that the distributed jar file contains dependencies with different licenses, please take a look at
+META-INF/LICENSE and META-INF/NOTICE .

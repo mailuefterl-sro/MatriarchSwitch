@@ -141,6 +141,12 @@ public class MatSwitchController {
     gui.midiFailed();
   }
   
+  /** interface method: Midi told us that list of interfaces has changed. Tell Gui to re-fetch interfaces */
+  public void midiChanged() {
+    log.debug("List of Midi interfaces changed, re-fetching.");
+    gui.midiChanged();
+  }
+
   /** set the currently selected Matriarch unitId */
   public void setMatUnit(final MatriarchUnit unit) {
     currentMatriarch = unit;
