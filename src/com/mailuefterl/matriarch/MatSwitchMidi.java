@@ -92,6 +92,9 @@ public class MatSwitchMidi {
     List<MidiInterface> interfaces = new ArrayList<MidiInterface>();
     for (MidiDevice.Info minfo: CoreMidiDeviceProvider.getMidiDeviceInfo()) {
       try {
+        if (minfo.getName().startsWith("Microsoft GS") || minfo.getName().startsWith("Microsoft MIDI Mapper")) {
+          continue;
+        }
         MidiDevice mdev = MidiSystem.getMidiDevice(minfo);
         if ((mdev instanceof Synthesizer) || (mdev instanceof Sequencer)) {
           continue;  // ignore software synth & seq
